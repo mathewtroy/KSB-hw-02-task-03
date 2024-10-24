@@ -1,0 +1,43 @@
+Solution
+
+I created a Playfair table with the keyword
+
+   0   1   2   3   4
+0  M   Y   S   K   A
+1  B   C   D   E   F
+2  G   H   I   L   N
+3  O   P   Q   R   T
+4  U   V   W   X   Z
+
+
+
+/------------------------------------------------------------------/
+Playfair Square Generation (generate_playfair_square):
+
+    The function creates a 5x5 matrix (Playfair square) using a keyword.
+
+    It removes duplicate letters from the keyword and replaces 'J' with 'I' since the Playfair cipher combines 'I' and 'J' into a single cell.
+
+    The rest of the alphabet (excluding 'J') fills the remaining cells of the matrix.
+
+    The result is a 5x5 grid used for encrypting/decrypting messages.
+
+
+/------------------------------------------------------------------/
+Finding Character Positions (find_position):
+
+    This function searches for a character in the Playfair square 
+    and returns its row and column coordinates.
+
+
+/------------------------------------------------------------------/
+Decrypting the Ciphertext (decrypt_playfair):
+
+    The function reads the ciphertext and processes it in pairs of characters.
+
+    The decryption rules for the Playfair cipher are as follows:
+        Same Row: If the characters are in the same row, move one column to the left (wrapping around if necessary).
+        Same Column: If the characters are in the same column, move one row up (wrapping around if necessary).
+        Rectangle Formation: If the characters form a rectangle, swap the columns of the characters.
+
+    The function continues until all character pairs are processed.
